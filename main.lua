@@ -154,7 +154,6 @@ end
 
 local function update()
     readParty()
-    print(party)
 
     local changeMap = didPartyChange()
     if changeMap[1] then
