@@ -160,22 +160,24 @@ local function update()
         for i = 1, 6, 1 do
             if changeMap[i + 1] then
                 local id = party[i]
-                local pngPath
-                if id == 0x19C then
-                    pngPath = "./sprites/egg.png"
-                else
-                    pngPath = getPNGPath(id)
-                end
-                local newPNG = io.open(pngPath, "rb")
-                if newPNG == nil then
-                    vba.print(getPNGPath(party[i]) .. " is missing.")
-                else
-                    local newData = newPNG:read("*a")
-                    newPNG:flush()
-                    
-                    local oldPNG = io.open("./party/p" .. tostring(i) .. ".png", "wb")
-                    oldPNG:write(newData)
-                    oldPNG:flush()
+                if id <= 0x19c then
+                    local pngPath
+                    if id == 0x19C then
+                        pngPath = "./sprites/egg.png"
+                    else
+                        pngPath = getPNGPath(id)
+                    end
+                    local newPNG = io.open(pngPath, "rb")
+                    if newPNG == nil then
+                        vba.print(getPNGPath(party[i]) .. " is missing.")
+                    else
+                        local newData = newPNG:read("*a")
+                        newPNG:flush()
+                        
+                        local oldPNG = io.open("./party/p" .. tostring(i) .. ".png", "wb")
+                        oldPNG:write(newData)
+                        oldPNG:flush()
+                    end
                 end
             end
         end
