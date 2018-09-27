@@ -14,9 +14,11 @@ This script allows streamers to display their current party to their viewers.
 
 5. Extract the sprites into the "sprites" folder.
 
-6. Run VBA and when the game is loaded. Load the script from Tools/Lua Scripting/New Lua Script Window...
+6. Use a text editor to set the game in the "SetGameInHere.lua" file. 1 for Emerald and 2 for FireRed/LeafGreen.
 
-7. Add the png files in the "party" folder to your OBS overlay.
+7. Run VBA and when the game is loaded. Load the script from Tools/Lua Scripting/New Lua Script Window...
+
+8. Add the png files in the "party" folder to your OBS overlay.
 
 ## Note
 Currently only Pokemon Emerald (USA) is supported. Please open an issue if you need a version for other games.
