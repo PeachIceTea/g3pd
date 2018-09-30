@@ -3,7 +3,7 @@
 local game = require "SetGameInHere"
 
 if game == 0 or game == nil then 
-    vba.print("Please read the readme file and set the game in "SetGameInHere.lua".")
+    vba.print("Please read the readme file and set the game in \"SetGameInHere.lua\".")
 else
     local bit = require("bit")
 
