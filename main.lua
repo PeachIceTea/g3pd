@@ -209,7 +209,6 @@ else
             end
             changeTimer = 0
             firstRead = false
-            print(party[6])
         end
     end
 
