@@ -1,2 +1,5 @@
 sprites/*.png
 party/*.png
+Pokemon
+dex.txt
+extract-pokedex.js

@@ -1,5 +1,3 @@
--- Copyright 2018 Jonas Thiem
-
 local game = require "SetGameInHere"
 
 if game == 0 or game == nil then 
@@ -23,56 +21,7 @@ else
         numberedSprites = false
     end
 
-    local darkRisingDB = {
-        "Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard",
-        "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree", "Venipede", "Whirlipede",
-        "Scolipede", "Pidgey", "Pidgeotto", "Pidgeot", "Blitzle", "Zebstrika", "Rufflet", "Braviary",
-        "Ekans", "Arbok", "Pikachu", "Raichu", "Zorua", "Zoroark", "Solosis", "Duosion", "Reuniclus",
-        "Litwick", "Lampent", "Chandelure", "Snover", "Abomasnow", "Vulpix", "Ninetales", "Yamask",
-        "Cofagrigus", "Zubat", "Golbat", "Gothita", "Gothorita", "Gothitelle", "Patrat", "Watchog",
-        "Minccino", "Cinccino", "Drilbur", "Excadrill", "Mienfoo", "Mienshao", "Hippopotas", 
-        "Hippowdon", "Pawniard", "Bisharp", "Growlithe", "Arcanine", "Poliwag", "Poliwhirl", "Poliwrath",
-        "Abra", "Kadabra", "Alakazam",  "Machop", "Machoke", "Machamp", "Starly", "Staravia", "Staraptor",
-        "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro",
-        "Magnemite", "Magneton", "Axew", "Fraxure", "Haxorus", "Dwebble", "Crustle", "Croagunk", "Toxicroak",
-        "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Bronzor", "Bronzong", "Scraggy",
-        "Scrafty", "Riolu", "Lucario", "Exeggcute", "Exeggutor", "Darumaka", "Darmanitan", "Hitmonlee", 
-        "Hitmonchan", "Lickitung", "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", 
-        "Horsea", "Seadra", "Ducklett", "Swanna", "Staryu", "Starmie", "Spiritomb", "Scyther", "Jynx", 
-        "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados","Lapras", "Ditto", "Eevee", "Vaporeon", 
-        "Jolteon", "Flareon", "Porygon", "Tirtouga", "Carracosta", "Archen", "Archeops", "Aerodactyl", "Snorlax",
-        "Alomomola", "Durant", "Zen Mode", "Dratini", "Dragonair", "Dragonite", "Audino", "Mew",
-
-        "Chikorita", "Bayleef", "Meganium", "Cyndaquil", "Quilava", "Typhlosion", "Totodile", "Croconaw", 
-        "Feraligatr", "Munna", "Musharna", "Buizel", "Floatzel", "Joltik", "Galvantula", "Spinarak", "Ariados", 
-        "Crobat", "Chinchou", "Lanturn", "Pichu", "Shellos", "Gastrodon", "Togepi", "Togetic", "Drifloon",
-        "Driftblim", "Timburr", "Gurdurr", "Conkeldurr", "Emolga", "Bouffalant", "Throh", "Sawk", "Politoed",
-        "Roggenrola", "Boldore", "Gigalith", "Aipom", "Cottonee", "Whimsicott", "Yanma", "Frillish",
-        "Jellicent", "Espeon", "Umbreon", "Murkrow", "Slowking", "Misdreavus", "Unown", "Wobbuffet", "Gallade",
-        "Pineco", "Forretress", "Rhyperior", "Gligar", "Steelix", "Skorupi", "Drapion", "Gliscor", "Scizor",
-        "Tangrowth", "Heracross", "Sneasel", "Teddiursa", "Ursaring", "Cubchoo", "Beartic", "Swinub", "Piloswine",
-        "Gible", "Gabite", "Garchomp", "Delibird", "Togekiss", "Skarmory", "Houndour", "Houndoom", "Kingdra", 
-        "Phanpy", "Donphan", "Porygon2", "Munchlax", "Druddigon", "Tyrogue", "Hitmontop", "Smoochum", "Elekid", 
-        "Magby", "Miltank", "Blissey", "Raikou", "Entei", "Suicune", "Larvitar", "Pupitar", "Tyranitar", "Lugia",
-        "Ho-Oh", "Celebi",
-
-        "Treecko", "Grovyle", "Sceptile", "Torchic", "Combusken", "Blaziken", "Mudkip", "Marshtomp", "Swampert",
-        "Turtwig", "Grotle", "Torterra", "Tepig", "Pignite", "Emboar", "Snivy", "Servine", "Serperior", "Lotad",
-        "Lombre", "Ludicolo", "Seedot", "Nuzleaf", "Shiftry", "Taillow", "Swellow", "Eelektrik", "Eelektross",
-        "Ralts", "Kirlia", "Gardevoir", "Piplup", "Prinplup", "Shroomish", "Breloom", "Slakoth", "Vigoroth", 
-        "Slaking", "Yanmega", "Ambipom", "Shedinja", "Golett", "Golurk", "Dusknoir", "Karrablast", "Escavalier",
-        "Honchkrow","Nosepass", "Sandile", "Krokorok", "Sableye", "Roserade", "Aron", "Lairon", "Aggron",
-        "Porygon-Z", "Magnezone", "Shelmet", "Accelgor", "Larvesta", "Volcarona", "Lickilicky", "Probopass",
-        "Roselia", "Chimchar", "Monferno", "Carvanha", "Sharpedo", "Empoleon", "Mamoswine", "Electivire",
-        "Magmortar", "Torkoal", "Spoink", "Grumpig", "Tynamo", "Trapinch", "Vibrava", "Flygon", "Cacnea", 
-        "Cacturne", "Swablu", "Altaria", "Weavile", "Froslass", "Glaceon", "Leafeon", "Oshawott", "Dewott",
-        "Corphish", "Crawdaunt", "Baltoy", "Claydol", "Shieldon", "Bastiodon", "Cranidos", "Rampardos",
-        "Feebas", "Milotic", "Castform", "Krookodile", "Ferroseed", "Ferrothorn", "Duskull", "Dusclops",
-        "Infernape", "Shaymin", "Absol", "Wynaut", "Snorunt", "Glalie", "Spheal", "Sealeo", "Walrein",
-        "Deino", "Zweilous", "Hydreigon", "Mismagius", "Samurott", "Bagon", "Shelgon", "Salamence", "Beldum",
-        "Metang", "Metagross", "Tornadus", "Thundurus", "Landorus", "Victini", "Keldeo", "Kyogre", "Groudon",
-        "Rayquaza", "Jirachi", "Deoxys"
-    }
+    local darkRisingDB = {"BULBASAUR", "IVYSAUR", "VENUSAUR", "CHARMANDER", "CHARMELEON", "CHARIZARD", "SQUIRTLE", "WARTORTLE", "BLASTOISE", "CATERPIE", "METAPOD", "BUTTERFREE", "VENIPEDE", "WHIRLIPEDE", "SCOLIPEDE", "PIDGEY", "PIDGEOTTO", "PIDGEOT", "BLITZLE", "ZEBSTRIKA", "RUFFLET", "BRAVIARY", "EKANS", "ARBOK", "PIKACHU", "RAICHU", "ZORUA", "ZOROARK", "SOLOSIS", "DUOSION", "REUNICLUS", "LITWICK", "LAMPENT", "CHANDELURE", "SNOVER", "ABOMASNOW", "VULPIX", "NINETALES", "YAMASK", "COFAGRIGUS", "ZUBAT", "GOLBAT", "GOTHITA", "GOTHORITA", "GOTHITELLE", "PATRAT", "WATCHOG", "MINCCINO", "CINCINNO", "DRILBUR", "EXCADRILL", "MIENFOO", "MIENSHAO", "HIPPOPOTAS", "HIPPOWDON", "PAWNIARD", "BISHARP", "GROWLITHE", "ARCANINE", "POLIWAG", "POLIWHIRL", "POLIWRATH", "ABRA", "KADABRA", "ALAKAZAM", "MACHOP", "MACHOKE", "MACHAMP", "STARLY", "STARAVIA", "STARAPTOR", "TENTACOOL", "TENTACRUEL", "GEODUDE", "GRAVELER", "GOLEM", "PONYTA", "RAPIDASH", "SLOWPOKE", "SLOWBRO", "MAGNEMITE", "MAGNETON", "AXEW", "FRAXURE", "HAXORUS", "DWEBBLE", "CRUSTLE", "CROAGUNK", "TOXICROAK", "SHELLDER", "CLOYSTER", "GASTLY", "HAUNTER", "GENGAR", "ONIX", "BRONZOR", "BRONZONG", "SCRAGGY", "SCRAFTY", "RIOLU", "LUCARIO", "EXEGGCUTE", "EXEGGUTOR", "DARUMAKA", "DARMANITAN", "HITMONLEE", "HITMONCHAN", "LICKITUNG", "KOFFING", "WEEZING", "RHYHORN", "RHYDON", "CHANSEY", "TANGELA", "KANGASKHAN", "HORSEA", "SEADRA", "DUCKLETT", "SWANNA", "STARYU", "STARMIE", "SPIRITOMB", "SCYTHER", "JYNX", "ELECTABUZZ", "MAGMAR", "PINSIR", "TAUROS", "MAGIKARP", "GYARADOS", "LAPRAS", "DITTO", "EEVEE", "VAPOREON", "JOLTEON", "FLAREON", "PORYGON", "TIRTOUGA", "CARRACOSTA", "ARCHEN", "ARCHEOPS", "AERODACTYL", "SNORLAX", "ALOMOMOLA", "DURANT", "ZEN MODE", "DRATINI", "DRAGONAIR", "DRAGONITE", "AUDINO", "MEW", "CHIKORITA", "BAYLEEF", "MEGANIUM", "CYNDAQUIL", "QUILAVA", "TYPHLOSION", "TOTODILE", "CROCONAW", "FERALIGATR", "MUNNA", "MUSHARNA", "BUIZEL", "FLOATZEL", "JOLTIK", "GALVANTULA", "SPINARAK", "ARIADOS", "CROBAT", "CHINCHOU", "LANTURN", "PICHU", "SHELLOS", "GASTRODON", "TOGEPI", "TOGETIC", "DRIFLOON", "DRIFTBLIM", "TIMBURR", "GURDURR", "CONKELDURR", "EMOLGA", "BOUFFALANT", "THROH", "SAWK", "POLITOED", "ROGGENROLA", "BOLDORE", "GIGALITH", "AIPOM", "COTTONEE", "WHIMSICOTT", "YANMA", "FRILLISH", "JELLICENT", "ESPEON", "UMBREON", "MURKROW", "SLOWKING", "MISDREAVUS", "UNOWN", "WOBBUFFET", "GALLADE", "PINECO", "FORRETRESS", "RHYPERIOR", "GLIGAR", "STEELIX", "SKORUPI", "DRAPION", "GLISCOR", "SCIZOR", "TANGROWTH", "HERACROSS", "SNEASEL", "TEDDIURSA", "URSARING", "CUBCHOO", "BEARTIC", "SWINUB", "PILOSWINE", "GIBLE", "GABITE", "GARCHOMP", "DELIBIRD", "TOGEKISS", "SKARMORY", "HOUNDOUR", "HOUNDOOM", "KINGDRA", "PHANPY", "DONPHAN", "PORYGON2", "MUNCHLAX", "DRUDDIGON", "TYROGUE", "HITMONTOP", "SMOOCHUM", "ELEKID", "MAGBY", "MILTANK", "BLISSEY", "RAIKOU", "ENTEI", "SUICUNE", "LARVITAR", "PUPITAR", "TYRANITAR", "LUGIA", "HO-OH", "CELEBI", "HEATMOR", "SEISMITOAD", "SIGILYPH", "CRYOGONAL", "KLINKLANG", "RESHIRAM", "ZEKROM", "MELOETTA", "AMPHAROS", "VANILLUXE", "LANDORUS-T", "COBALION", "PIKACHU!!!", "GIRATINA", "DIALGA", "PALKIA", "REGIGIGAS", "CRESSELIA", "MEWTWO", "KYUREM W", "KYUREM B", "KYUREM", "CONARP", "BLAZARD", "GENESECT", "TREECKO", "GROVYLE", "SCEPTILE", "TORCHIC", "COMBUSKEN", "BLAZIKEN", "MUDKIP", "MARSHTOMP", "SWAMPERT", "TURTWIG", "GROTLE", "TORTERRA", "TEPIG", "PIGNITE", "EMBOAR", "SNIVY", "SERVINE", "SERPERIOR", "LOTAD", "LOMBRE", "LUDICOLO", "SEEDOT", "NUZLEAF", "SHIFTRY", "YANMEGA", "AMBIPOM", "SHEDINJA", "TAILLOW", "SWELLOW", "SHROOMISH", "BRELOOM", "TYNAMO", "EELEKTRIK", "EELEKTROSS", "PIPLUP", "PRINPULP", "EMPOLEON", "MAMOSWINE", "SANDILE", "KROKOROK", "KROOKODILE", "BALTOY", "CLAYDOL", "NOSEPASS", "TORKOAL", "SABLEYE", "OSHAWOTT", "DEWOTT", "SAMUROTT", "CORPHISH", "CRAWDAUNT", "FEEBAS", "MILOTIC", "CARVANHA", "SHARPEDO", "TRAPINCH", "VIBRAVA", "FLYGON", "KARRABLAST", "ESCAVALIER", "SHELMET", "ACCELLGOR", "ELECTIVIRE", "MAGMORTAR", "SPHEAL", "SEALEO", "WALREIN", "CACNEA", "CACTURNE", "SNORUNT", "GLALIE", "GLACEON", "LEAFEON", "HONCHKROW", "SPOINK", "GRUMPIG", "LARVESTA", "VOLCARONA", "ROSERADE", "PORYGON-Z", "MAGNEZONE", "SWABLU", "ALTARIA", "WYNAUT", "DUSKULL", "DUSCLOPS", "ROSELIA", "SLAKOTH", "VIGOROTH", "SLAKING", "CHIMCHAR", "MONFERNO", "INFERNAPE", "GOLETT", "GOLURK", "DUSKNOIR", "DEINO", "ZWEILOUS", "HYDREIGON", "ABSOL", "FERROSEED", "FERROTHORN", "FROSLASS", "WEAVILE", "MISMAGIUS", "ARON", "LAIRON", "AGGRON", "CASTFORM", "LICKILICKY", "PROBOPASS", "SHIELDON", "BASTIODON", "CRANIDOS", "RAMPARDOS", "RALTS", "KIRLIA", "GARDEVOIR", "BAGON", "SHELGON", "SALAMENCE", "BELDUM", "METANG", "METAGROSS", "TORNADUS", "THUNDURUS", "LANDORUS", "KYOGRE", "GROUDON", "RAYQUAZA", "VICTINI", "KELDEO", "JIRACHI", "DEOXYS", "SHAYMIN"}
 
     local pkmNameDB = {"Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard",
         "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree",
@@ -180,11 +129,13 @@ else
 
                 local loc = speciesLoc[(perso % 24) + 1]
                 local speci = getbits(bit.bxor(memory.readdwordunsigned(address + 32 + loc), key), 0, 16)
-                if speci > 251 then 
+                if speci > 251 and not game == 3 then 
                     speci = speci - 25
                 end
 
                 party[i] = speci
+            else
+                party[i] = 0
             end     
         end
         if originalParty[1] == 0 then copyArray(party, originalParty) end
@@ -233,29 +184,32 @@ else
             for i = 1, 6, 1 do
                 if changeMap[i + 1] then
                     local id = originalParty[i]
-                    if id <= 0x19c then
-                        local pngPath
-                        if id == 0x19C then
-                            pngPath = "./sprites/egg.png"
-                        else
-                            pngPath = getPNGPath(id)
-                        end
-                        local newPNG = io.open(pngPath, "rb")
-                        if newPNG == nil then
-                            vba.print(getPNGPath(originalParty[i]) .. " is missing.")
-                        else
-                            local newData = newPNG:read("*a")
-                            newPNG:flush()
-                            
-                            local oldPNG = io.open("./party/p" .. tostring(i) .. ".png", "wb")
-                            oldPNG:write(newData)
-                            oldPNG:flush()
-                        end
+                    local pngPath
+                    if id == 0x19C then
+                        pngPath = "./sprites/egg.png"
+                    elseif id == 0 then
+                        pngPath = "./sprites/0.png"
+                    else
+                        pngPath = getPNGPath(id)
                     end
+
+                    local newPNG = io.open(pngPath, "rb")
+                    if newPNG == nil then
+                        vba.print(getPNGPath(originalParty[i]) .. " is missing.")
+                    end
+                        
+                    local newData = newPNG:read("*a")
+                    newPNG:flush()
+                    
+                    local oldPNG = io.open("./party/p" .. tostring(i) .. ".png", "wb")
+                    oldPNG:write(newData)
+                    oldPNG:flush()
+
                 end
             end
             changeTimer = 0
             firstRead = false
+            print(party[6])
         end
     end
 
