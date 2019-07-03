@@ -10,11 +10,13 @@ This script allows streamers to display their current party to their viewers.
 
 2. [Get the latest version of g3pd](https://github.com/PeachIceTea/g3pd/archive/master.zip).
 
-3. Get sprites you like. I used [these](https://veekun.com/dex/downloads). Sprites have the following additional requirements:
+3. Get sprites you like. I used [these](https://veekun.com/dex/downloads). The files need to be either named after the pokemon or be their national pokedex id. Sprites have the following additional requirements:
 
     3.1 A "0.png" that matches the dimensions of the other sprites, but is emtpy.
 
     3.2 An "egg.png" for, well, eggs.
+
+    3.3 For Dark Rising only named sprites are supported.
 
 4. Extract g3pd into its own folder.
 
