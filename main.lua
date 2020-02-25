@@ -129,7 +129,7 @@ else
 
                 local loc = speciesLoc[(perso % 24) + 1]
                 local speci = getbits(bit.bxor(memory.readdwordunsigned(address + 32 + loc), key), 0, 16)
-                if speci > 251 and not game == 3 then 
+                if speci > 251 and game ~= 3 then 
                     speci = speci - 25
                 end
 
@@ -227,5 +227,5 @@ else
 
     clearPartyDisplay()
     gui.register(update)
-    vba.print("g3pd 1.1 loaded <3")
+    vba.print("g3pd 1.1b loaded <3")
 end
